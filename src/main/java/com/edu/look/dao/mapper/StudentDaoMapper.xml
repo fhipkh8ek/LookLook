@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.edu.look.dao.IStudentDao">
+
+ 	<select id="studentlogin" parameterType="String"  resultType="com.edu.look.pojo.Student">
+ 		select * from student where sname=#{sname} and spassword=#{spassword};
+ 	</select>
+ 
+ 	<insert id="studentregister" >	
+ 		insert into student(sname,spassword,semail,ssex) values(#{sname},#{spassword},#{email},#{sex});
+ 	</insert>
+
+	<update id="update" parameterType="String" >
+ 		update student set sname=#{sname},sage=#{sage},saddress=#{saddress},shome=#{shome},sphone=#{sphone},semail=#{semail},slon=#{slon},slat=#{slat},s1=#{s1},sphoto=#{sphoto} where  sid=#{sid};
+ 	</update>
+ 	
+ 	<select id="getontperson" parameterType="String"  resultType="com.edu.look.pojo.Student">
+ 		select * from student where sid=#{sid};
+ 	</select>
+ </mapper>

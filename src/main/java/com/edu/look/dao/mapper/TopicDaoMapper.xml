@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.edu.look.dao.ITopicDao">
+
+ 	<select id="getAllTopic"  resultType="com.edu.look.pojo.Topic">
+ 		select * from topic,student where student.sid=topic.sid order by ttime desc
+ 	</select>
+ 	<select id="getOneTopic"  resultType="com.edu.look.pojo.Topic">
+ 		select * from topic,student where student.sid=topic.sid and topic.tid=#{tid}
+ 	</select>
+ 	
+ 	<select id="getGonggaoTopic"  resultType="com.edu.look.pojo.Topic">
+ 		select * from topic,student where student.sid=topic.sid and ttype='社区公告'
+ 	</select>
+ 	<select id="gonggaocount"  resultType="String">
+ 		select count(ttype) from topic where ttype='社区公告'
+ 	</select>
+ 	<select id="getRentieTopic"  resultType="com.edu.look.pojo.Topic">
+ 		select * from topic,student where student.sid=topic.sid and ttype='热帖榜'
+ 	</select>
+ 	<select id="retiecount"  resultType="String">
+ 		select count(ttype) from topic where ttype='热帖榜'
+ 	</select>
+ 	<select id="getFenxiangTopic"  resultType="com.edu.look.pojo.Topic">
+ 		select * from topic,student where student.sid=topic.sid and ttype='分享会'
+ 	</select>
+ 	<select id="fenxiangcount"  resultType="String">
+ 		select count(ttype) from topic where ttype='分享会'
+ 	</select>
+ 	<select id="getWendaTopic"  resultType="com.edu.look.pojo.Topic">
+ 		select * from topic,student where student.sid=topic.sid and ttype='问答榜'
+ 	</select>
+ 	<select id="wendacount"  resultType="String">
+ 		select count(ttype) from topic where ttype='问答榜'
+ 	</select>
+ 	<select id="getYuanwangTopic"  resultType="com.edu.look.pojo.Topic">
+ 		select * from topic,student where student.sid=topic.sid and ttype='愿望墙'
+ 	</select>
+ 	<select id="yuanwangcount"  resultType="String">
+ 		select count(ttype) from topic where ttype='愿望墙'
+ 	</select>
+ 	<select id="getXuecheTopic"  resultType="com.edu.look.pojo.Topic">
+ 		select * from topic,student where student.sid=topic.sid and ttype='学车趣事'
+ 	</select>
+ 	<select id="xuechecount"  resultType="String">
+ 		select count(ttype) from topic where ttype='学车趣事'
+ 	</select>
+ 	
+ 	<select id="getJinriTopic"  resultType="com.edu.look.pojo.Topic">
+ 		select * from topic,student where student.sid=topic.sid and TO_DAYS(ttime)=to_days(now()) limit 0,10
+ 	</select>
+ 	<select id="getLiulanTopic"  resultType="com.edu.look.pojo.Topic">
+ 		select * from topic,student where student.sid=topic.sid order by tlook desc limit 0,4
+ 	</select>
+ 
+ 	<insert id="addTopic">
+ 		insert into topic(sid,tname,tcontent,ttime,ttype,tphoto) values(#{sid},#{tname},#{tcontent},#{ttime},#{ttype},#{tphoto});
+ 	</insert>
+ 	
+ 	<update id="dianzanTopic" parameterType="String" >
+ 		update topic set tgood=tgood+1 where  tid=#{tid};
+ 	</update>
+ 	
+ 	<update id="lookTopic" parameterType="String" >
+ 		update topic set tlook=tlook+1 where  tid=#{tid};
+ 	</update>
+ </mapper>

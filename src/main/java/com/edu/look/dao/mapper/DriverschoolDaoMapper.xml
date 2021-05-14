@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.edu.look.dao.IDriverSchoolDao">
+
+ 	<select id="getAlldriverschool"  resultType="com.edu.look.pojo.DriverSchool">
+ 		select * from driverschool;
+ 	</select>
+ 
+ <select id="getOnedriverschool" parameterType="String" resultType="com.edu.look.pojo.DriverSchool">
+ 		select * from driverschool where did=#{did};
+ 	</select>
+ 	
+ 	<select id="getDriverschool"  resultType="com.edu.look.pojo.DriverSchool">
+ 		select * from driverschool order by sid desc limit 0,3;
+ 	</select>
+ 	
+ 	<select id="countdriverschool"  resultType="int">
+ 		select count(did) from driverschool;
+ 	</select>
+ 	
+ 	<select id="fristdriverschool"  resultType="com.edu.look.pojo.DriverSchool">
+ 		select * from driverschool order by sid desc limit 0,2;
+ 	</select>
+ 	
+ 	<select id="paginationdriverschool"  resultType="com.edu.look.pojo.DriverSchool">
+ 		select * from driverschool order by sid desc limit #{frist},#{pagesize};
+ 	</select>
+ </mapper>

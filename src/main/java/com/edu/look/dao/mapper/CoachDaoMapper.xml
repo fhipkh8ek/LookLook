@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.edu.look.dao.ICoachDao">
+
+ 	<select id="getAllCoach"  resultType="com.edu.look.pojo.Coach">
+ 		select * from coach,driverschool where driverschool.did=coach.did;
+ 	</select>
+ 
+ 	<select id="getNameCoach" parameterType="String" resultType="com.edu.look.pojo.Coach">
+ 		select * from coach,driverschool where coach.cid=#{cid} and driverschool.did=coach.did;
+ 	</select>
+ 	
+ 	<select id="getByDriverSchoolCoach"  resultType="com.edu.look.pojo.Coach">
+ 		select * from coach,driverschool where driverschool.did=coach.did and driverschool.did=#{did};
+ 	</select>
+ 	
+ 	<select id="getCoach"  resultType="com.edu.look.pojo.Coach">
+ 		select * from coach order by cscore desc limit 0,4;
+ 	</select>
+ 	<select id="getascCoach"  resultType="com.edu.look.pojo.Coach">
+ 		select * from coach order by c1/cscore asc limit 0,4;
+ 	</select>
+ 	
+ 	
+ 	<select id="countcoach"  resultType="int">
+ 		select count(did) from coach;
+ 	</select>
+ 	
+ 	<select id="fristcoach"  resultType="com.edu.look.pojo.Coach">
+ 		select * from coach,driverschool where driverschool.did=coach.did limit 0,2;
+ 	</select>
+ 	
+ 	<select id="paginationcoach"  resultType="com.edu.look.pojo.Coach">
+ 		select * from coach,driverschool where driverschool.did=coach.did limit #{pagenumber},#{pagesize};
+ 	</select>
+ </mapper>

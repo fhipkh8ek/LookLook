@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.edu.look.dao.IValidateCodeDao">
+
+    <select id="getValidatePic"  resultType="com.edu.look.pojo.ValidatePic">
+    SELECT id,picId,pic FROM ValidateCode WHERE id >= ((SELECT MAX(id) FROM ValidateCode)-(SELECT MIN(id) FROM ValidateCode)) * RAND() + (SELECT MIN(id) FROM ValidateCode)  LIMIT 1
+    </select>
+
+    <select id="checkValidateCode"  resultType="Integer">
+        SELECT COUNT(*) FROM ValidateCode WHERE id=#{id} AND picCode=#{code}
+    </select>
+</mapper>

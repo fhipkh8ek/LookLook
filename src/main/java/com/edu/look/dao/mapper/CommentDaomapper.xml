@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.edu.look.dao.ICommentDao">
+ 
+ 	<insert id="addComment" >	
+ 		insert into comment(tid,sid,comment,comtime) values(#{tid},#{sid},#{comment},#{comtime});
+ 	</insert>
+
+	<select id="getAllComment" parameterType="String" resultType="com.edu.look.pojo.Comment">
+ 		select * from comment,student where comment.tid=#{tid} and student.sid=comment.sid;
+ 	</select>
+ </mapper>
