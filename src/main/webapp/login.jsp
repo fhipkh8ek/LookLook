@@ -33,7 +33,7 @@
 						<div class="name"><input type="text" name="validatecode" placeholder="验证码"></div>
 						<div class="name"><img id="validateCode" alt="验证码" src="${validatePic.getPic()}" onclick="refreshValidateCode()"></div>
 						<div class="tijiao"><button type="submit">确认登录</button></div>
-						<div class="reg"><a href="register.jsp">免费注册</a></div>
+						<div class="reg"><a href="/look/register.jsp">免费注册</a></div>
 					</div>
 				</div>
         	</div>
@@ -46,7 +46,7 @@
 <script type="text/javascript">
 	let validatePic;
 function refreshValidateCode(){
-	alert("刷星！！！");
+	alert("刷新！！！");
 	$.post('/look/login/validateCode.htm',function(data){
 		validatePic = data;
 		alert(validatePic.id);

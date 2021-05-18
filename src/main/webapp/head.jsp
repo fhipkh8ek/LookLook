@@ -111,7 +111,7 @@
                     <div  style="width:100%;height:100%;border:#ccc solid 1px;display:none;" id="dituContent">
     </div>
     
-                        <div class="sel_container"><strong id="curCity"><font color="red"><b>自贡市</b></font></strong> [<a id="curCityText" href="javascript:void(0)">更换城市</a>]</div>
+                        <div class="sel_container"><strong id="curCity"><font color="red"><b>乐山市</b></font></strong> [<a id="curCityText" href="javascript:void(0)">更换城市</a>]</div>
                     <div class="map_popup" id="cityList" style="display:none;">
 		<div class="popup_main">
 			<div class="title">城市列表</div>
@@ -165,7 +165,7 @@
                     
                     <c1:if test="${empty stu}">
                     <div class="login">
-                        <a href="/look/login.jsp" style="color: #000000">登录</a>
+                        <a href="/look/login/login.htm" style="color: #000000">登录</a>
                         &nbsp;|&nbsp;
                         <a href="/look/register.jsp" style="color: #499afd">注册</a>
                     </div>

@@ -114,7 +114,7 @@
 
 <script type="text/javascript">
 		var pagenumber = 1;
-		var pagesize = 2;
+		var pagesize = 5;
 		var total = 0;
 		
 		//查询总条数

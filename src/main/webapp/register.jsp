@@ -37,16 +37,6 @@
 				
 					邮箱：
 					<input type="email" id="email" class="form-control" name="email" required><br>
-					
-					
-					
-				
-					<a href="javascript:void(0)" onclick="radom()" class="btn btn-default">获取验证码</a>
-					<input type="hidden" id="random" value="" class="random" class="form-control"  name ="radom">
-				
-					验证码：
-					<input type="text" class="form-control" name="verification">
-					<br>
 				
 					性别：
 						<label class="checkbox-inline">
