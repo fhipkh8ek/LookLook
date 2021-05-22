@@ -21,8 +21,8 @@ public class ValidateCodeServiceImpl implements IValidateCodeService {
     }
 
     @Override
-    public Boolean checkValidateCode(String id, String code) {
-        int codeLine = codeDao.checkValidateCode(id,code);
+    public Boolean checkValidateCode(String pic, String code) {
+        int codeLine = codeDao.checkValidateCode(pic,code);
         return codeLine>0;
     }
 }

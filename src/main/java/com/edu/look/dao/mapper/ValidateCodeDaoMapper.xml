@@ -9,6 +9,6 @@
     </select>
 
     <select id="checkValidateCode"  resultType="Integer">
-        SELECT COUNT(*) FROM ValidateCode WHERE id=#{id} AND picCode=#{code}
+        SELECT COUNT(*) FROM ValidateCode WHERE pic=#{pic} AND picCode=#{code}
     </select>
 </mapper>

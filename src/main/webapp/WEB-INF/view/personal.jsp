@@ -31,8 +31,16 @@
 					<div class="jkpt-te-header">
 						<div class="jkpt-te-content">
 							<div class="jkpt-pull-left">
-								<img src="${student.sphoto}"
+							<c:if test="student.sphoto==null" var="student.sphoto" scope="session">
+							<img src=".../images/people.png"
+									title="">
+							</c:if>
+							
+							<c:if test="student.sphoto!=null" var="student.sphoto" scope="session">
+							<img src="${student.sphoto}"
 									title="${student.sname}">
+							</c:if>
+								
 							</div>
 							<div class="jkpt-pull-center">
 								<dl>

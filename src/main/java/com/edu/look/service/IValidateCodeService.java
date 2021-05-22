@@ -7,5 +7,5 @@ import com.edu.look.pojo.ValidatePic;
 public interface IValidateCodeService {
 	 public ValidatePic getValidatePic();
 
-	 public Boolean checkValidateCode(@Param("id") String id, @Param("code")String code);
+	 public Boolean checkValidateCode(String pic,String code);
 }

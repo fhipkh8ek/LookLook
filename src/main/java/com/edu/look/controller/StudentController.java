@@ -36,7 +36,7 @@ public class StudentController {
 	@RequestMapping(value="/studentlogin.htm",method=RequestMethod.POST)
 	public String studentlogin(String username,String password,HttpSession session){
 		Student stu;
-		System.out.println("Í¼Æ¬Á´½Ó");
+		System.out.println("ÓÃ»§µÇÂ¼");
 		if(studentservice.studentlogin(username, password)!=null){
 			stu = studentservice.studentlogin(username, password);
 			System.out.println("ture"+studentservice.studentlogin(username, password));
@@ -46,7 +46,7 @@ public class StudentController {
 			
 			System.out.println("false"+studentservice.studentlogin(username, password));
 			
-			return "forward:/login.htm";
+			return "forward:/login/login.htm";
 		}
 		
 	}

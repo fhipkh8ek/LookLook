@@ -19,7 +19,7 @@ public class LoginController {
 	@Autowired
 	IValidateCodeService validateCodeService;
 	
-	@RequestMapping(value="/login.htm",method=RequestMethod.GET)
+	@RequestMapping(value="/login.htm")
 	public String index(HttpServletRequest req){
 		ValidatePic validatePic = validateCodeService.getValidatePic();
 		System.out.println(validatePic.getId());
@@ -31,10 +31,16 @@ public class LoginController {
 	//validateCode
 	@ResponseBody
 	@RequestMapping(value="/validateCode.htm",method=RequestMethod.POST)
-	public ValidatePic validateCode(HttpServletRequest req){
+	public ValidatePic refreshValidateCode(HttpServletRequest req){
 		ValidatePic validatePic = validateCodeService.getValidatePic();
-		System.out.println("自己刷新界面"+validatePic.getId());
-		req.setAttribute("validatePic", validatePic);
 		return validatePic;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/validateImage.htm",method=RequestMethod.POST)
+	public int ValidateImageCode(String pic,String code,HttpServletRequest req){
+		int codeMatch = validateCodeService.checkValidateCode(pic, code)?1:0;
+		System.out.println("验证码"+codeMatch);
+		return codeMatch;
 	}
 }
