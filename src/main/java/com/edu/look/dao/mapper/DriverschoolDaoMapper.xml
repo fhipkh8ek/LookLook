@@ -21,7 +21,7 @@
  	</select>
  	
  	<select id="fristdriverschool"  resultType="com.edu.look.pojo.DriverSchool">
- 		select * from driverschool order by sid desc limit 0,2;
+ 		select * from driverschool order by sid desc limit 0,5;
  	</select>
  	
  	<select id="paginationdriverschool"  resultType="com.edu.look.pojo.DriverSchool">

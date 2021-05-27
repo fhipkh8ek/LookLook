@@ -95,7 +95,7 @@
    <!-- <div id='dituContent' style='width: 50%; height: 50%; position: absolute; display: none'></div>-->
     <div  style="width:100%;height:100%;border:#ccc solid 1px;display:none;" id="dituContent">
     </div>
-    <div class="sel_container"><strong id="curCity">自贡市</strong> [<a id="curCityText" href="javascript:void(0)">更换城市</a>]</div>
+    <div class="sel_container"><strong id="curCity">乐山市</strong> [<a id="curCityText" href="javascript:void(0)">更换城市</a>]</div>
     
     <div class="map_popup" id="cityList" style="display:none;">
 		<div class="popup_main">
