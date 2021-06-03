@@ -44,8 +44,8 @@
 
 <div class="center-in-center">
 
-<img src="${student.sphoto}" height="100px" width="100px">
-<input type="file" value="${student.sphoto}" name="file"><br>
+<img id="avatorImg" src="${student.sphoto}" height="100px" width="100px">
+<input onchange="changeAvator(this.files)" id="avator" class="avator" type="file" value="${student.sphoto}" name="file" accept="image/*"><br>
 <input type="hidden" name="photo" value="${student.sphoto}">
 <label for="exampleInputName2">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:&nbsp;</label> 
 <input type="text" class="form-control" name="sname" value="${student.sname}"><br>
@@ -85,7 +85,18 @@
    <%--  <%@ include file="/foot.jsp"%> --%>
 		</body>
 		 <script type="text/javascript">
-		 
+
+		 function changeAvator(files){
+			 let selectImg = files[0];
+			 if (window.createObjectURL != undefined) { // basic
+			        url = window.createObjectURL(selectImg);
+			    } else if (window.URL != undefined) { // mozilla(firefox)
+			        url = window.URL.createObjectURL(selectImg);
+			    } else if (window.webkitURL != undefined) { // webkit or chrome
+			        url = window.webkitURL.createObjectURL(selectImg);
+			    }
+			 document.getElementById("avatorImg").src=url;
+		 }
 
            function validate() {
                var sever_add = document.getElementsByName('sever_add')[0].value;
