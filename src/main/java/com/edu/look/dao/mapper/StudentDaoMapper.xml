@@ -19,4 +19,8 @@
  	<select id="getontperson" parameterType="String"  resultType="com.edu.look.pojo.Student">
  		select * from student where sid=#{sid};
  	</select>
+ 	
+ 	<select id="getStudentNum" parameterType="String"  resultType="Integer">
+ 		select count(sname) from student where sname=#{sname};
+ 	</select>
  </mapper>

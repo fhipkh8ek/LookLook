@@ -64,7 +64,7 @@
 
 <label for="exampleInputName2">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:&nbsp;</label> 
 <input type="text" class="form-control" name="semail" value="${student.semail }"><br>
-
+<!-- 
 <div class="main-div">  
 
 <label for="exampleInputName2">经&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度:&nbsp;</label> 
@@ -79,6 +79,7 @@
 <div id='allmap' style='width: 100%; height: 30%; position: absolute; display: none'></div></div>
 <input type="submit" class="btn btn-default" value="修改">
 </div>
+ -->
 
 </form>
 </c:forEach>
@@ -136,7 +137,8 @@
                    map.enableScrollWheelZoom(true);
                }
                else {
-                   alert('failed' + this.getStatus());
+            	   console.log('failed' + this.getStatus());
+                   //alert('failed' + this.getStatus());
                }
            }, { enableHighAccuracy: true })
            map.addEventListener("click", showInfo);

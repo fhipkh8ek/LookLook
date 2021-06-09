@@ -10,15 +10,17 @@
 	<link rel="stylesheet" type="text/css" href="/look/css/register.css">
 	<script type="text/javascript" src="/look/js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
     <link href="/look/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    
-	<c:if test="${not empty message}">
-		<script type="text/javascript">alert(message)</script>
+    <c:if test='${message=="1"}'>
+		<script type="text/javascript">alert("用户名已被注册！")</script>
+	</c:if>
+	<c:if test='${message=="0"}'>
+		<script type="text/javascript">alert("注册失败，请重试！")</script>
 	</c:if>
 </head>
 <body>
 
 	<%@ include file="head.jsp"%>
-		<form action="/look/student/register.htm" method="post">
+		<form action='/look/student/register.htm' id="form" method="post">
 				
 		<div class="content">
 			
@@ -44,7 +46,7 @@
 						<span>男</span>
 						</label>
 						<label class="checkbox-inline">
-						<input class="sex2" type="radio" id="inlineCheckbox1" name="sex" value="女">
+						<input class="sex2" type="radio" id="inlineCheckbox2" name="sex" value="女">
 						<span>女</span>
 						</label>
 					<br>
@@ -119,8 +121,6 @@ createHttpRequest();
 		
 		
 		//查询总条数
-		
-		
 		function radom(){
 			var random = 0;
 			var email = document.getElementById("email").value;  

@@ -14,4 +14,6 @@ public interface IStudentDao {
 	public boolean update(@Param("sid")String sid,@Param("sname")String sname,@Param("sage")String sage,@Param("saddress")String saddress,@Param("shome")String shome,@Param("sphone")String sphone,@Param("semail")String semail,@Param("slon")String slon,@Param("slat")String slat,@Param("s1")String s1,@Param("sphoto")String sphoto);
 	
 	public List<Student> getontperson(String sid);
+	
+	public int getStudentNum(@Param("sname")String sname);
 }
