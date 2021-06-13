@@ -64,6 +64,13 @@ public class CoachServiceImpl implements ICoachService {
 		return coachdao.paginationcoach(pagenumber, pagesize);
 	}
 
+	@Override
+	public List<Coach> getCoachByCondition(String sex, String region, int ageFrom, int ageTo, int beenDiverFrom,
+			int beenDiverTo) {
+		// TODO Auto-generated method stub
+		return coachdao.getCoachByCondition(sex, region, ageFrom, ageTo, beenDiverFrom, beenDiverTo);
+	}
+
 	
 
 }

@@ -21,4 +21,5 @@ public interface ICoachDao {
 	public List<Coach> fristcoach();//Ê×Ò³
 	public List<Coach> paginationcoach(@Param("pagenumber")int pagenumber,@Param("pagesize")int pagesize);//·ÖÒ³
 	
+	public List<Coach> getCoachByCondition(@Param("sex")String sex,@Param("region")String region,@Param("ageFrom")int ageFrom,@Param("ageTo") int ageTo,@Param("beenDiverFrom")int beenDiverFrom,@Param("beenDiverTo")int beenDiverTo);
 }

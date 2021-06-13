@@ -35,4 +35,29 @@
  	<select id="paginationcoach"  resultType="com.edu.look.pojo.Coach">
  		select * from coach,driverschool where driverschool.did=coach.did limit #{pagenumber},#{pagesize};
  	</select>
+ 	
+ 	<select id="getCoachByCondition"  resultType="com.edu.look.pojo.Coach">
+		select * from coach,driverschool
+
+        <where>
+		    <if test="ageFrom != null">
+            cage <![CDATA[ >= ]]> #{ageFrom}
+            </if>
+            <if test="ageTo != null">
+              AND cage<![CDATA[ <= ]]> #{ageTo}
+            </if>
+            <if test="sex != null">
+                AND sex = #{sex}
+            </if>
+            <if test="region != null">
+                AND caddress = #{region}
+            </if>
+            <if test="beenDiverFrom != null">
+                AND beenDiver <![CDATA[ >= ]]> #{beenDiverFrom}
+            </if>
+            <if test="ageTo != null">
+                AND beenDiver<![CDATA[ <= ]]> #{beenDiverTo}
+            </if>
+        </where>
+	</select>
  </mapper>
