@@ -36,7 +36,7 @@ public class StudentController {
 	@RequestMapping(value="/studentlogin.htm",method=RequestMethod.POST)
 	public String studentlogin(String username,String password,HttpSession session){
 		Student stu;
-		System.out.println("用户登录");
+		System.out.println("图片链接");
 		if(studentservice.studentlogin(username, password)!=null){
 			stu = studentservice.studentlogin(username, password);
 			System.out.println("ture"+studentservice.studentlogin(username, password));
@@ -46,7 +46,7 @@ public class StudentController {
 			
 			System.out.println("false"+studentservice.studentlogin(username, password));
 			
-			return "forward:/login/login.htm";
+			return "forward:/login.htm";
 		}
 		
 	}
@@ -60,33 +60,21 @@ public class StudentController {
 		System.out.println("----------verification-------------");
 		System.out.println("-"+verification+"-");
 		System.out.println("----------verification-------------");
-		//if(radom.equals(verification)){
+		if(radom.equals(verification)){
 			System.out.println("验证码正确");
-			//检查是否有存在的username
-			
-			int studentNum = studentservice.getStudentNum(sname);
-			if(studentNum==0)
-			{
 			if(studentservice.studentregister(sname, spassword, email, sex)){
 				System.out.println("注册成功");
 				MailUtil.sendEmail(email, "学员"+sname+"注册成功，您的密码是"+spassword+",现在可以登陆学习了！！！", "注册成功");
 				return "forward:/login.jsp";
 				
 			}else{
-				req.setAttribute("message", "0");
+				req.setAttribute("message", "注册失败！");
 				return "forward:/register.jsp";
 			}
-			}
-			
-			else{
-				System.out.println("用户名已被注册");
-				req.setAttribute("message", "1");
-				return "forward:/register.jsp";
-			}
-		/*}else{
+		}else{
 			req.setAttribute("message", "注册失败，验证码不正确！");
 			return "forward:/register.jsp";
-		}*/
+		}
 	}
 	
 	//student register

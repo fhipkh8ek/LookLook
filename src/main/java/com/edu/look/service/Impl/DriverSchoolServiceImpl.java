@@ -53,4 +53,10 @@ public class DriverSchoolServiceImpl implements IDriverSchoolService {
 		return driverschooldao.paginationdriverschool(frist, pagesize);
 	}
 
+	@Override
+	public List<DriverSchool> blurGet(String dname) {
+		// TODO Auto-generated method stub
+		return driverschooldao.blurGet(dname);
+	}
+
 }

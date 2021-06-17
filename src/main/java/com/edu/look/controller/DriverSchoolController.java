@@ -67,4 +67,15 @@ public class DriverSchoolController {
 	public List<DriverSchool> paginationdriverschool(int pagenumber,int pagesize){
 		return driverschool.paginationdriverschool(pagenumber, pagesize);
 	}
+	
+	
+	@RequestMapping(value="blurdriverschool.htm",method=RequestMethod.POST)
+	public String blurGet(String dname,HttpServletRequest req){
+		List<DriverSchool> driverschoollist;
+		driverschoollist= driverschool.blurGet(dname);
+		System.out.println("size:"+driverschoollist.size());
+        req.setAttribute("driverschoollist", driverschoollist);
+		return "getalldriverschool";
+	}
+	
 }

@@ -27,4 +27,7 @@
  	<select id="paginationdriverschool"  resultType="com.edu.look.pojo.DriverSchool">
  		select * from driverschool order by sid desc limit #{frist},#{pagesize};
  	</select>
+ 	<select id="blurGet" resultType="com.edu.look.pojo.DriverSchool">
+ 		select * from driverschool where dname like concat('%',#{dname},'%')
+ 	</select>
  </mapper>

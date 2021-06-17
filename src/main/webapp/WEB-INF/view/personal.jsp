@@ -31,9 +31,8 @@
 					<div class="jkpt-te-header">
 						<div class="jkpt-te-content">
 							<div class="jkpt-pull-left">
-							<img src="${student.sphoto}"
+								<img src="${student.sphoto}"
 									title="${student.sname}">
-								
 							</div>
 							<div class="jkpt-pull-center">
 								<dl>

@@ -16,4 +16,5 @@ public interface IDriverSchoolDao {
 	public int countdriverschool();//统计总条数
 	public List<DriverSchool> fristdriverschool();//首页
 	public List<DriverSchool> paginationdriverschool(@Param("frist")int frist,@Param("pagesize")int pagesize);//分页
+	public List<DriverSchool> blurGet(@Param("dname")String dname);
 }

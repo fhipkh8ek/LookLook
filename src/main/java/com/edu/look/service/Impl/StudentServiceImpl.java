@@ -47,12 +47,4 @@ public class StudentServiceImpl implements IStudentService {
 		return studentdao.getontperson(sid);
 	}
 
-	@Override
-	public int getStudentNum(String sname) {
-		// TODO Auto-generated method stub
-		return studentdao.getStudentNum(sname);
-	}
-	
-	
-
 }

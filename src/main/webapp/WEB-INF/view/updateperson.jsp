@@ -44,8 +44,8 @@
 
 <div class="center-in-center">
 
-<img id="avatorImg" src="${student.sphoto}" height="100px" width="100px">
-<input onchange="changeAvator(this.files)" id="avator" class="avator" type="file" value="${student.sphoto}" name="file" accept="image/*"><br>
+<img src="${student.sphoto}" height="100px" width="100px">
+<input type="file" value="${student.sphoto}" name="file"><br>
 <input type="hidden" name="photo" value="${student.sphoto}">
 <label for="exampleInputName2">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:&nbsp;</label> 
 <input type="text" class="form-control" name="sname" value="${student.sname}"><br>
@@ -64,7 +64,7 @@
 
 <label for="exampleInputName2">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:&nbsp;</label> 
 <input type="text" class="form-control" name="semail" value="${student.semail }"><br>
-<!-- 
+
 <div class="main-div">  
 
 <label for="exampleInputName2">经&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度:&nbsp;</label> 
@@ -79,25 +79,13 @@
 <div id='allmap' style='width: 100%; height: 30%; position: absolute; display: none'></div></div>
 <input type="submit" class="btn btn-default" value="修改">
 </div>
- -->
 
 </form>
 </c:forEach>
    <%--  <%@ include file="/foot.jsp"%> --%>
 		</body>
 		 <script type="text/javascript">
-
-		 function changeAvator(files){
-			 let selectImg = files[0];
-			 if (window.createObjectURL != undefined) { // basic
-			        url = window.createObjectURL(selectImg);
-			    } else if (window.URL != undefined) { // mozilla(firefox)
-			        url = window.URL.createObjectURL(selectImg);
-			    } else if (window.webkitURL != undefined) { // webkit or chrome
-			        url = window.webkitURL.createObjectURL(selectImg);
-			    }
-			 document.getElementById("avatorImg").src=url;
-		 }
+		 
 
            function validate() {
                var sever_add = document.getElementsByName('sever_add')[0].value;
@@ -137,8 +125,7 @@
                    map.enableScrollWheelZoom(true);
                }
                else {
-            	   console.log('failed' + this.getStatus());
-                   //alert('failed' + this.getStatus());
+                  ;
                }
            }, { enableHighAccuracy: true })
            map.addEventListener("click", showInfo);

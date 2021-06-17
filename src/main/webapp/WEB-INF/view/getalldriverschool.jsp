@@ -27,7 +27,12 @@
            </div>
        <div class="tacher-list">
        <br>
-       <center><font style="font-size:28px;font-family: sans-serif">驾校列表</font></center>
+       <center><font style="font-size:28px;font-family: sans-serif">驾校列表</font>
+       <form action="blurdriverschool.htm" method="post">
+       <input type="search" name="dname"  placeholder="输入驾校名称..."/>
+       <input type="submit"/>
+       </form>
+       </center>
            <ul class="ul-list" id="ul-list">
             
             
